@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Restaurant from './Restaurant';
-import { connect } from 'react-redux'
 class Restaurants extends Component {
 
   renderRestaurants = () => this.props.restaurants.map((restaurant) => <Restaurant key={restaurant.id} restaurant={restaurant} deleteRestaurant={this.props.deleteRestaurant} />)
@@ -13,4 +12,4 @@ class Restaurants extends Component {
   }
 };
 
-export default connect()(Restaurants);
+export default Restaurants;
