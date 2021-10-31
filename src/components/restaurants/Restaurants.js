@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-
+import Restaurant from './Restaurant';
+import { connect } from 'react-redux'
 class Restaurants extends Component {
+
+  renderRestaurants = () => this.props.restaurants.map((restaurant) => <Restaurant key={restaurant.id} restaurant={restaurant} deleteRestaurant={this.props.deleteRestaurant} />)
   render() {
-    return(
+    return (
       <ul>
-        Restaurants Component
+        {this.renderRestaurants()}
       </ul>
     );
   }
 };
 
-export default Restaurants;
+export default connect()(Restaurants);
